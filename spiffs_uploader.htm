@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SPIFFS Uploader</title>
+<script>    
+function uploader(e, up){
+  e.preventDefault();//  alert(up.data.value);
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {		
+		alert("Uploaded Successfully");
+	}
+};
+var a = new FormData();
+  a.append("data", up.data.files[0], up.data.value);
+  xhttp.open("POST", up.path.value + "/edit");
+  xhttp.send(a);	
+}
+</script>
+</head>
+<body>
+<form onsubmit="uploader(event, this)">
+		<input type="text" name="path" placeholder="host path http://" value="http://quasar_nmi.local">
+		<input type='file' name='data'>
+		<input type='submit' value='Update Spiffs' style="width: auto; background-color: red;">
+	</form>
+</body>
+</html>
