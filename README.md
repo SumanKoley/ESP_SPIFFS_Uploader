@@ -1,4 +1,4 @@
-# ESP_SPIFFS_Uploader
+# ESP SPIFFS Uploader + Firmware Updater
 Simple HTML file uploader for ESP 8266 SPIFFS 
 
 A substitute of https://github.com/esp8266/arduino-esp8266fs-plugin
